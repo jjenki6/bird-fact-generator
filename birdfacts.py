@@ -12,5 +12,5 @@ while(ask()!="n"):
     if (factsgiven in facts[randomindex]): #checks for repeats
         break
     else:
-        print("\n"+facts[randomindex]+"\n")
+        print("\n"+facts[randomindex]+"\n"
         factsgiven=factsgiven.append(randomindex)
