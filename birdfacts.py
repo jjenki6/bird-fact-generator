@@ -9,12 +9,17 @@ factsgiven=[]
 
 while(ask()!="n"):
     randomindex=random.randrange(len(facts))
-    if (facts[randomindex] in factsgiven): #checks for repeats
-        while((facts[randomindex]not in factsgiven)):
+    if ((facts[randomindex] in factsgiven) and (len(facts)!=len(factsgiven))):
+        #checks for repeats and if all of the facts have been gone through
+        while((facts[randomindex] in factsgiven)):
+            #while 
             randomindex=random.randrange(len(facts))
         print("\n"+facts[randomindex]+"\n")
         factsgiven.append(facts[randomindex])
     else:
-        print("\n"+facts[randomindex]+"\n")
-        factsgiven.append(facts[randomindex])
-print("I have run out of bird facts to give!")
+        if((len(facts)!=len(factsgiven))):
+            print("\n"+facts[randomindex]+"\n")
+            factsgiven.append(facts[randomindex])
+        else:
+            break
+print("\nI have run out of bird facts to give!")
