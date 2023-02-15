@@ -9,8 +9,12 @@ factsgiven=[]
 
 while(ask()!="n"):
     randomindex=random.randrange(len(facts))
-    if (factsgiven in facts[randomindex]): #checks for repeats
-        break
+    if (facts[randomindex] in factsgiven): #checks for repeats
+        while((facts[randomindex]not in factsgiven)):
+            randomindex=random.randrange(len(facts))
+        print("\n"+facts[randomindex]+"\n")
+        factsgiven.append(facts[randomindex])
     else:
-        print("\n"+facts[randomindex]+"\n"
-        factsgiven=factsgiven.append(randomindex)
+        print("\n"+facts[randomindex]+"\n")
+        factsgiven.append(facts[randomindex])
+print("I have run out of bird facts to give!")
